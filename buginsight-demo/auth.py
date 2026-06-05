@@ -1,3 +1,4 @@
 def get_user(username):
-    query = f"SELECT * FROM users WHERE username='{username}'"
-    return query
+    query = 'SELECT * FROM users WHERE username=?'
+    cursor.execute(query, (username,))
+    return cursor.fetchone()
